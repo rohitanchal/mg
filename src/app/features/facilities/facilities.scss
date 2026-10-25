@@ -207,7 +207,7 @@
 
 .facilities-note {
     display: flex;
-    align-items: start;
+    align-items: center;
     gap: 12px;
     margin-top: 35px;
     padding: 18px 20px;
@@ -215,8 +215,9 @@
     background: #fffdf9;
 
     i {
-        margin-top: 2px;
         color: #98713f;
+        font-size: 16px;
+        line-height: 1;
     }
 
     p {

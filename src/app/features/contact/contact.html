@@ -1,1 +1,265 @@
-<p>contact works!</p>
+<section class="contact-hero">
+    <div class="container">
+        <p class="section-eyebrow">LET'S MAKE IT MEMORABLE</p>
+
+        <h1>
+            Let's Plan Your <span>Special Day</span>
+        </h1>
+
+        <p class="hero-description">
+            Tell us a little about your celebration and your requirements.
+            We'll help you explore the venue for your occasion.
+        </p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+
+            <!-- Contact information -->
+            <div class="col-12 col-lg-5">
+                <div class="contact-intro">
+                    <p class="section-eyebrow">GET IN TOUCH</p>
+
+                    <h2>
+                        Every Great Celebration
+                        <span>Starts Here</span>
+                    </h2>
+
+                    <p class="contact-description">
+                        Whether you're planning a wedding, reception, birthday
+                        or family gathering, share your requirements with us.
+                    </p>
+                </div>
+
+                <div class="contact-info-list">
+                    <article class="contact-info-item">
+                        <div class="info-icon">
+                            <i class="bi bi-calendar-heart" aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h3>Tell Us About Your Event</h3>
+                            <p>
+                                Share your event type, preferred date and
+                                approximate number of guests.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="contact-info-item">
+                        <div class="info-icon">
+                            <i class="bi bi-chat-square-text" aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h3>Discuss Your Requirements</h3>
+                            <p>
+                                Let us know what you have in mind so the venue
+                                arrangements can be discussed with you.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="contact-info-item">
+                        <div class="info-icon">
+                            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h3>Venue Location</h3>
+                            <p>
+                                The confirmed venue address and directions
+                                will be added here before the website goes live.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="contact-note">
+                    <i class="bi bi-info-circle" aria-hidden="true"></i>
+                    <p>
+                        Event dates and facility availability must be
+                        confirmed directly with the venue.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Enquiry form -->
+            <div class="col-12 col-lg-7">
+                <div class="enquiry-card">
+                    <div class="form-heading">
+                        <p class="section-eyebrow">ENQUIRY FORM</p>
+                        <h2>Tell Us About Your Event</h2>
+                        <p>
+                            Fields marked with * are required.
+                        </p>
+                    </div>
+
+                    <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()" novalidate>
+                        <div class="row g-4">
+
+                            <!-- Name -->
+                            <div class="col-12 col-md-6">
+                                <label for="name" class="form-label">
+                                    Full Name *
+                                </label>
+
+                                <input id="name" type="text" class="form-control" formControlName="name"
+                                    placeholder="Enter your full name" autocomplete="name" maxlength="80"
+                                    [class.is-invalid]="
+                      enquiryForm.controls.name.touched &&
+                      enquiryForm.controls.name.invalid
+                    " />
+
+                                @if (
+                                enquiryForm.controls.name.touched &&
+                                enquiryForm.controls.name.hasError('required')
+                                ) {
+                                <div class="invalid-feedback">
+                                    Please enter your name.
+                                </div>
+                                } @else if (
+                                enquiryForm.controls.name.touched &&
+                                enquiryForm.controls.name.hasError('minlength')
+                                ) {
+                                <div class="invalid-feedback">
+                                    Name must contain at least 2 characters.
+                                </div>
+                                }
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="col-12 col-md-6">
+                                <label for="phone" class="form-label">
+                                    Phone Number *
+                                </label>
+
+                                <input id="phone" type="tel" class="form-control" formControlName="phone"
+                                    placeholder="e.g. 9876543210" autocomplete="tel" maxlength="14" [class.is-invalid]="
+                      enquiryForm.controls.phone.touched &&
+                      enquiryForm.controls.phone.invalid
+                    " />
+
+                                @if (
+                                enquiryForm.controls.phone.touched &&
+                                enquiryForm.controls.phone.hasError('required')
+                                ) {
+                                <div class="invalid-feedback">
+                                    Please enter your phone number.
+                                </div>
+                                } @else if (
+                                enquiryForm.controls.phone.touched &&
+                                enquiryForm.controls.phone.hasError('pattern')
+                                ) {
+                                <div class="invalid-feedback">
+                                    Enter a valid Indian mobile number.
+                                </div>
+                                }
+                            </div>
+
+                            <!-- Event type -->
+                            <div class="col-12 col-md-6">
+                                <label for="eventType" class="form-label">
+                                    Event Type *
+                                </label>
+
+                                <select id="eventType" class="form-select" formControlName="eventType"
+                                    [class.is-invalid]="
+                      enquiryForm.controls.eventType.touched &&
+                      enquiryForm.controls.eventType.invalid
+                    ">
+                                    <option value="" disabled>
+                                        Select event type
+                                    </option>
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Reception">Reception</option>
+                                    <option value="Engagement">Engagement</option>
+                                    <option value="Birthday">Birthday</option>
+                                    <option value="Anniversary">Anniversary</option>
+                                    <option value="Corporate Event">Corporate Event</option>
+                                    <option value="Other">Other</option>
+                                </select>
+
+                                @if (
+                                enquiryForm.controls.eventType.touched &&
+                                enquiryForm.controls.eventType.hasError('required')
+                                ) {
+                                <div class="invalid-feedback">
+                                    Please select an event type.
+                                </div>
+                                }
+                            </div>
+
+                            <!-- Event date -->
+                            <div class="col-12 col-md-6">
+                                <label for="eventDate" class="form-label">
+                                    Preferred Event Date
+                                </label>
+
+                                <input id="eventDate" type="date" class="form-control" formControlName="eventDate"
+                                    [min]="minEventDate" />
+                            </div>
+
+                            <!-- Guest count -->
+                            <div class="col-12">
+                                <label for="guestCount" class="form-label">
+                                    Expected Number of Guests
+                                </label>
+
+                                <select id="guestCount" class="form-select" formControlName="guestCount">
+                                    <option value="">Select guest count</option>
+                                    <option value="Under 100">Under 100</option>
+                                    <option value="100–300">100–300</option>
+                                    <option value="301–500">301–500</option>
+                                    <option value="501–1000">501–1000</option>
+                                    <option value="1000+">More than 1000</option>
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="col-12">
+                                <label for="message" class="form-label">
+                                    Additional Requirements
+                                </label>
+
+                                <textarea id="message" class="form-control" formControlName="message" rows="4"
+                                    maxlength="1000" placeholder="Tell us about your requirements..."></textarea>
+
+                                <div class="character-count">
+                                    {{ enquiryForm.controls.message.value?.length ?? 0 }}/1000
+                                </div>
+                            </div>
+
+                            <!-- Submission notice -->
+                            @if (formNotice) {
+                            <div class="col-12">
+                                <div class="submission-notice" role="status">
+                                    <i class="bi bi-info-circle" aria-hidden="true"></i>
+                                    {{ formNotice }}
+                                </div>
+                            </div>
+                            }
+
+                            <!-- Submit -->
+                            <div class="col-12">
+                                <button type="submit" class="btn enquiry-submit-btn">
+                                    Submit Enquiry
+                                    <i class="bi bi-arrow-up-right ms-2" aria-hidden="true"></i>
+                                </button>
+
+                                <p class="form-disclaimer">
+                                    Submitting this demo form does not send your
+                                    enquiry to the venue.
+                                </p>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
