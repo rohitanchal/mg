@@ -1,0 +1,25 @@
+<div class="skeleton-group">
+    @for (slot of slots; track slot) {
+    @switch (variant) {
+    @case ('text') {
+    <span class="skeleton skeleton--text" [style.width]="lineWidth(slot)"></span>
+    }
+    @case ('card') {
+    <span class="skeleton skeleton--card">
+        <span class="skeleton skeleton--media"></span>
+        <span class="skeleton skeleton--text"></span>
+        <span class="skeleton skeleton--text skeleton--short"></span>
+    </span>
+    }
+    @case ('gallery-card') {
+    <span class="skeleton skeleton--gallery">
+        <span class="skeleton skeleton--media"></span>
+        <span class="skeleton skeleton--text skeleton--short"></span>
+    </span>
+    }
+    @default {
+    <span class="skeleton skeleton--media"></span>
+    }
+    }
+    }
+</div>

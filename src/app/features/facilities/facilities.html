@@ -30,10 +30,22 @@
             @for (facility of facilities; track facility.title; let i = $index) {
             <div class="col-12 col-md-6 col-lg-3">
                 <article class="facility-card">
-                    @if (facility.image) {
+                    @if (facility.image; as image) {
                     <div class="facility-image">
-                        <img [src]="facility.image" [alt]="facility.title" loading="lazy" decoding="async" width="600"
-                            height="420" />
+                        <span class="image-stage">
+                            <img appImageState #facilityPhoto="imageState" [class.is-ready]="facilityPhoto.ready"
+                                [src]="image.src" [attr.srcset]="image.srcset"
+                                sizes="(min-width: 992px) 25vw, (min-width: 768px) 50vw, 100vw" [width]="image.width"
+                                [height]="image.height" [alt]="facility.title" loading="lazy" decoding="async" />
+                            @if (!facilityPhoto.ready && !facilityPhoto.failed) {
+                            <app-skeleton-loader variant="image" />
+                            } @else if (facilityPhoto.failed) {
+                            <span class="image-fallback">
+                                <i class="bi bi-image" aria-hidden="true"></i>
+                                <span>Image unavailable</span>
+                            </span>
+                            }
+                        </span>
                         <span class="facility-number">
                             {{ (i + 1).toString().padStart(2, '0') }}
                         </span>

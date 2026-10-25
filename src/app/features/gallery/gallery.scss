@@ -312,6 +312,7 @@
         max-height: calc(100vh - 170px);
         border-radius: 4px;
         object-fit: contain;
+        background: #2a1d20;
     }
 
     figcaption {
@@ -332,6 +333,11 @@
             font-size: 1.4rem;
         }
     }
+}
+
+.lightbox-media {
+    height: auto;
+    min-height: 220px;
 }
 
 @media (hover: none) {

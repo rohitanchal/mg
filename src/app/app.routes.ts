@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
+import { PublicLayout } from './layouts/public-layout/public-layout';
 
 export const routes: Routes = [
     {
         path: '',
-        loadComponent: () =>
-            import('./layouts/public-layout/public-layout')
-                .then(m => m.PublicLayout),
+        component: PublicLayout,
         children: [
             {
                 path: '',

@@ -49,7 +49,19 @@
             <button type="button" class="gallery-item" [class.gallery-item--featured]="
               image.featured && activeCategory === 'All'
             " [attr.aria-label]="'View image: ' + image.title" (click)="openImage(image)">
-                <img [src]="image.src" [alt]="image.alt" loading="lazy" decoding="async" width="900" height="650" />
+                <span class="image-stage">
+                    <img appImageState #galleryPhoto="imageState" [class.is-ready]="galleryPhoto.ready" [src]="image.src"
+                        [attr.srcset]="image.srcset" [attr.sizes]="imageSizes" [width]="image.width"
+                        [height]="image.height" [alt]="image.alt" loading="lazy" decoding="async" />
+                    @if (!galleryPhoto.ready && !galleryPhoto.failed) {
+                    <app-skeleton-loader variant="image" />
+                    } @else if (galleryPhoto.failed) {
+                    <span class="image-fallback">
+                        <i class="bi bi-image" aria-hidden="true"></i>
+                        <span>Image unavailable</span>
+                    </span>
+                    }
+                </span>
 
                 <span class="gallery-overlay">
                     <span class="gallery-caption">
@@ -105,7 +117,18 @@
     </button>
 
     <figure class="lightbox-content" (click)="$event.stopPropagation()">
-        <img [src]="image.src" [alt]="image.alt" />
+        <span class="image-stage lightbox-media">
+            <img appImageState #previewPhoto="imageState" [class.is-ready]="previewPhoto.ready" [src]="image.previewSrc"
+                [width]="image.width" [height]="image.height" [alt]="image.alt" />
+            @if (!previewPhoto.ready && !previewPhoto.failed) {
+            <app-skeleton-loader variant="image" />
+            } @else if (previewPhoto.failed) {
+            <span class="image-fallback">
+                <i class="bi bi-image" aria-hidden="true"></i>
+                <span>Image unavailable</span>
+            </span>
+            }
+        </span>
 
         <figcaption>
             <span>{{ image.category }}</span>

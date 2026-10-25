@@ -98,3 +98,11 @@
         margin-left: 0 !important;
     }
 }
+
+.brand:focus-visible,
+.nav-link:focus-visible,
+.navbar-toggler:focus-visible,
+.enquiry-btn:focus-visible {
+    outline: 2px solid #8b2635;
+    outline-offset: 3px;
+}

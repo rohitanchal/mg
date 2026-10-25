@@ -1,0 +1,11 @@
+@if (visible) {
+<div class="route-progress" role="progressbar" aria-label="Loading page" aria-valuetext="Loading the next page">
+    <span class="route-progress__bar"></span>
+</div>
+}
+
+@if (errorMessage) {
+<p class="route-error" role="alert">
+    This page could not be loaded. {{ errorMessage }}
+</p>
+}

@@ -1,0 +1,54 @@
+.route-progress {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    overflow: hidden;
+    background: rgb(181 138 76 / 28%);
+    pointer-events: none;
+}
+
+.route-progress__bar {
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, #8b2635, #b58a4c);
+    animation: route-progress 1s ease-in-out infinite;
+}
+
+.route-error {
+    position: fixed;
+    z-index: 1990;
+    top: 16px;
+    left: 50%;
+    width: min(560px, calc(100% - 32px));
+    margin: 0;
+    padding: 12px 16px;
+    transform: translateX(-50%);
+    border: 1px solid #8b2635;
+    background: #fffdf9;
+    box-shadow: 0 10px 28px rgb(51 42 45 / 14%);
+    color: #332a2d;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@keyframes route-progress {
+    from {
+        transform: translateX(-120%);
+    }
+
+    to {
+        transform: translateX(320%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .route-progress__bar {
+        width: 100%;
+        animation: none;
+        transform: none;
+    }
+}

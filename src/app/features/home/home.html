@@ -1,5 +1,7 @@
 <section class="hero">
-    <img class="hero-image" src="/images/hero/hero2.jpg" alt="Banquet hall interior" fetchpriority="high" />
+    <img class="hero-image" [src]="heroImage.src" [attr.srcset]="heroImage.srcset" sizes="100vw"
+        [width]="heroImage.width" [height]="heroImage.height" alt="Decorated banquet hall prepared for a celebration"
+        fetchpriority="high" />
 
     <div class="hero-overlay"></div>
 
@@ -46,8 +48,21 @@
         <div class="row align-items-center g-5">
             <div class="col-12 col-lg-6">
                 <div class="intro-image-wrapper">
-                    <img src="/images/hero/hero.jpg" alt="Banquet hall interior" loading="lazy" decoding="async"
-                        width="900" height="700" />
+                    <span class="image-stage">
+                        <img appImageState #introPhoto="imageState" [class.is-ready]="introPhoto.ready"
+                            [src]="introImage.src" [attr.srcset]="introImage.srcset"
+                            sizes="(min-width: 992px) 50vw, 100vw" [width]="introImage.width"
+                            [height]="introImage.height" alt="Banquet hall interior with seating for a celebration"
+                            loading="lazy" decoding="async" />
+                        @if (!introPhoto.ready && !introPhoto.failed) {
+                        <app-skeleton-loader variant="image" />
+                        } @else if (introPhoto.failed) {
+                        <span class="image-fallback">
+                            <i class="bi bi-image" aria-hidden="true"></i>
+                            <span>Image unavailable</span>
+                        </span>
+                        }
+                    </span>
 
                     <div class="intro-image-caption">
                         <i class="bi bi-stars" aria-hidden="true"></i>
@@ -114,8 +129,21 @@
             <div class="col-12 col-sm-6 col-lg-3">
                 <article class="featured-facility-card">
                     <div class="featured-image-wrapper">
-                        <img [src]="facility.image" [alt]="facility.title" loading="lazy" decoding="async" width="600"
-                            height="450" />
+                        <span class="image-stage">
+                            <img appImageState #facilityPhoto="imageState" [class.is-ready]="facilityPhoto.ready"
+                                [src]="facility.image.src" [attr.srcset]="facility.image.srcset"
+                                sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw"
+                                [width]="facility.image.width" [height]="facility.image.height" [alt]="facility.title"
+                                loading="lazy" decoding="async" />
+                            @if (!facilityPhoto.ready && !facilityPhoto.failed) {
+                            <app-skeleton-loader variant="image" />
+                            } @else if (facilityPhoto.failed) {
+                            <span class="image-fallback">
+                                <i class="bi bi-image" aria-hidden="true"></i>
+                                <span>Image unavailable</span>
+                            </span>
+                            }
+                        </span>
 
                         <span class="featured-image-icon" aria-hidden="true">
                             <i [class]="'bi ' + facility.icon"></i>

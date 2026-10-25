@@ -18,8 +18,21 @@
         <div class="row align-items-center g-5">
             <div class="col-12 col-lg-6">
                 <div class="story-image">
-                    <img src="/images/hero/hero.jpg" alt="Elegant banquet hall prepared for a celebration"
-                        loading="lazy" decoding="async" width="900" height="700" />
+                    <span class="image-stage">
+                        <img appImageState #venuePhoto="imageState" [class.is-ready]="venuePhoto.ready"
+                            [src]="venueImage.src" [attr.srcset]="venueImage.srcset"
+                            sizes="(min-width: 992px) 50vw, 100vw" [width]="venueImage.width"
+                            [height]="venueImage.height" alt="Elegant banquet hall prepared for a celebration"
+                            loading="lazy" decoding="async" />
+                        @if (!venuePhoto.ready && !venuePhoto.failed) {
+                        <app-skeleton-loader variant="image" />
+                        } @else if (venuePhoto.failed) {
+                        <span class="image-fallback">
+                            <i class="bi bi-image" aria-hidden="true"></i>
+                            <span>Image unavailable</span>
+                        </span>
+                        }
+                    </span>
                     <span class="story-image-label">
                         Every occasion has a story
                     </span>

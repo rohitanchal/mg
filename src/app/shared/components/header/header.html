@@ -9,26 +9,26 @@
                 </span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="mainNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="mainNavbar">
+            <div class="collapse navbar-collapse" id="mainNavbar" [class.show]="menuOpen">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+                        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenuAfterClick()">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+                        <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="closeMenuAfterClick()">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/facilities" routerLinkActive="active">Facilities</a>
+                        <a class="nav-link" routerLink="/facilities" routerLinkActive="active" (click)="closeMenuAfterClick()">Facilities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/gallery" routerLinkActive="active">Gallery</a>
+                        <a class="nav-link" routerLink="/gallery" routerLinkActive="active" (click)="closeMenuAfterClick()">Gallery</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn enquiry-btn" routerLink="/contact">Enquire Now</a>
+                        <a class="btn enquiry-btn" routerLink="/contact" (click)="closeMenuAfterClick()">Enquire Now</a>
                     </li>
                 </ul>
             </div>
