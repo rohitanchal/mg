@@ -1,0 +1,84 @@
+:host {
+    display: block;
+}
+
+.site-footer {
+    background: #2f2024;
+    color: #fffaf5;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #fffaf5;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid #c6a36a;
+    border-radius: 50%;
+    color: #e0c18c;
+}
+
+.footer-description {
+    max-width: 390px;
+    color: #d0c2c3;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.footer-heading {
+    margin-bottom: 20px;
+    color: #e0c18c;
+    font-family: Georgia, serif;
+    font-size: 19px;
+}
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #d0c2c3;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.footer-links a:hover {
+    color: #e0c18c;
+}
+
+.footer-cta {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 1px solid #c6a36a;
+    color: #e0c18c;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+.footer-cta:hover {
+    background: #c6a36a;
+    color: #2f2024;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgb(255 255 255 / 12%);
+    color: #c0b1b3;
+    font-size: 13px;
+}

@@ -1,0 +1,37 @@
+<header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand brand" routerLink="/" aria-label="Marriage Hall home">
+                <span class="brand-mark">M</span>
+                <span class="brand-name">
+                    <span class="brand-title">Marriage Hall</span>
+                    <span class="brand-subtitle">YOUR SPECIAL DAY</span>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/facilities" routerLinkActive="active">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/gallery" routerLinkActive="active">Gallery</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn enquiry-btn" routerLink="/contact">Enquire Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

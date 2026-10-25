@@ -1,0 +1,100 @@
+:host {
+    display: block;
+}
+
+.site-header {
+    background: #fffdf9;
+    border-bottom: 1px solid #eee5dc;
+    box-shadow: 0 4px 18px rgb(54 30 30 / 4%);
+}
+
+.navbar {
+    min-height: 84px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #49252d;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    border: 1px solid #b58a4c;
+    border-radius: 50%;
+    color: #8b2635;
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.brand-title {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.brand-subtitle {
+    margin-top: 5px;
+    color: #a17c4b;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    margin: 0 5px;
+    color: #51454a;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #8b2635;
+}
+
+.enquiry-btn {
+    padding: 11px 21px;
+    border: 1px solid #8b2635;
+    border-radius: 3px;
+    background: #8b2635;
+    color: #fff;
+    font-size: 14px;
+    transition: background 180ms ease;
+}
+
+.enquiry-btn:hover {
+    border-color: #69202b;
+    background: #69202b;
+    color: #fff;
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        min-height: 74px;
+    }
+
+    .navbar-collapse {
+        padding: 12px 0 20px;
+    }
+
+    .nav-link {
+        padding: 11px 0;
+    }
+
+    .nav-item.ms-lg-3 {
+        margin-top: 10px;
+        margin-left: 0 !important;
+    }
+}
