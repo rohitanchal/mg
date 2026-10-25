@@ -1,84 +1,83 @@
 <section class="facilities-hero">
     <div class="container">
-        <p class="eyebrow">THOUGHTFULLY DESIGNED FOR YOU</p>
-        <h1>Facilities for <span>Every Celebration</span></h1>
+        <p class="section-eyebrow">COMFORT MEETS CELEBRATION</p>
+        <h1>Spaces & <span>Facilities</span></h1>
         <p>
-            Discover the spaces and services designed to make your special
-            occasions comfortable, beautiful and memorable.
+            Explore the venue features that can help make your special
+            occasion comfortable and memorable.
         </p>
-        <a routerLink="/contact" class="btn facilities-cta">
-            Plan Your Event
-            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        <a routerLink="/contact" class="btn facilities-hero-btn">
+            Enquire About Your Event
+            <i class="bi bi-arrow-up-right ms-2" aria-hidden="true"></i>
         </a>
     </div>
 </section>
 
-
 <section class="facilities-list-section">
     <div class="container">
         <div class="facilities-heading">
-            <div class="heading-decoration">
-                <span></span>
-                <i class="bi bi-stars" aria-hidden="true"></i>
-                <span></span>
+            <div>
+                <p class="section-eyebrow">EXPLORE THE VENUE</p>
+                <h2>Designed Around <span>Your Occasion</span></h2>
             </div>
-
-            <p class="eyebrow">THE DETAILS THAT MATTER</p>
-
-            <h2>
-                Thoughtfully Curated
-                <span>For Your Special Day</span>
-            </h2>
-
             <p class="heading-description">
-                From the setting to the little details, explore the facilities
-                designed to bring your celebration together.
+                Browse our venue highlights and contact us to discuss
+                your event requirements.
             </p>
         </div>
 
         <div class="row g-4">
             @for (facility of facilities; track facility.title; let i = $index) {
-            <div class="col-12 col-sm-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-3">
                 <article class="facility-card">
-                    <div class="facility-card-top">
+                    @if (facility.image) {
+                    <div class="facility-image">
+                        <img [src]="facility.image" [alt]="facility.title" loading="lazy" decoding="async" width="600"
+                            height="420" />
                         <span class="facility-number">
                             {{ (i + 1).toString().padStart(2, '0') }}
                         </span>
-
-                        <div class="facility-icon">
-                            <i [class]="'bi ' + facility.icon" aria-hidden="true"></i>
-                        </div>
                     </div>
+                    } @else {
+                    <div class="facility-icon-area">
+                        <i [class]="'bi ' + facility.icon" aria-hidden="true"></i>
+                        <span class="facility-number">
+                            {{ (i + 1).toString().padStart(2, '0') }}
+                        </span>
+                    </div>
+                    }
 
-                    <h3>{{ facility.title }}</h3>
-
-                    <p>{{ facility.description }}</p>
-
-                    <div class="facility-card-line"></div>
+                    <div class="facility-content">
+                        <h3>{{ facility.title }}</h3>
+                        <p>{{ facility.description }}</p>
+                        <a routerLink="/contact" class="facility-link">
+                            Ask About This Facility
+                            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </article>
             </div>
             }
         </div>
 
-        <div class="facilities-bottom-note">
-            <span class="note-line"></span>
-            <p>Every celebration deserves a beautiful setting.</p>
-            <span class="note-line"></span>
+        <div class="facilities-note">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <p>
+                Facilities and arrangements may vary. Contact us to confirm
+                what is available for your event.
+            </p>
         </div>
     </div>
 </section>
 
-
-<section class="facilities-contact">
+<section class="facilities-cta">
     <div class="container">
-        <div>
-            <p class="eyebrow">LET'S PLAN SOMETHING SPECIAL</p>
-            <h2>Have Questions About Our Facilities?</h2>
-            <p>Contact us to discuss your event requirements and venue arrangements.</p>
-        </div>
-        <a routerLink="/contact" class="btn facilities-cta">
-            Enquire Now
-            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        <p class="section-eyebrow">LET'S PLAN TOGETHER</p>
+        <h2>Have a Celebration in Mind?</h2>
+        <p>Share your requirements and enquire about the venue.</p>
+        <a routerLink="/contact" class="btn facilities-cta-btn">
+            Get in Touch
+            <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
         </a>
     </div>
 </section>

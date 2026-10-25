@@ -2,23 +2,20 @@
     display: block;
 }
 
-// Hero section
 .facilities-hero {
-    padding: 90px 0;
+    padding: 90px 0 100px;
     background: #3b292e;
     color: #fffdf9;
     text-align: center;
 
-    .eyebrow {
+    .section-eyebrow {
         color: #e1c18c;
     }
 
     h1 {
-        max-width: 850px;
-        margin: 0 auto 22px;
-        font-size: clamp(38px, 5vw, 62px);
+        margin-bottom: 20px;
+        font-size: clamp(40px, 5vw, 62px);
         font-weight: 500;
-        line-height: 1.2;
 
         span {
             color: #e1c18c;
@@ -26,261 +23,231 @@
         }
     }
 
-    .container>p:not(.eyebrow) {
-        max-width: 650px;
+    p:not(.section-eyebrow) {
+        max-width: 590px;
         margin: 0 auto 28px;
-        color: rgb(255 255 255 / 78%);
+        color: #e4dadd;
         font-size: 15px;
         line-height: 1.9;
     }
 }
 
-// Shared eyebrow style
-.eyebrow {
-    margin-bottom: 16px;
-    color: #9b7748;
+.section-eyebrow {
+    margin-bottom: 17px;
+    color: #98713f;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2.5px;
 }
 
-// CTA button
-.facilities-cta {
-    display: inline-flex;
-    min-height: 48px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px 22px;
+.facilities-hero-btn,
+.facilities-cta-btn {
+    padding: 13px 23px;
     border: 1px solid #b58a4c;
-    border-radius: 2px;
+    border-radius: 0;
     background: #b58a4c;
-    color: #261a1d;
+    color: #fff;
     font-size: 13px;
     font-weight: 600;
-    text-decoration: none;
-    transition: background 180ms ease, border-color 180ms ease;
+    transition: background 180ms ease, color 180ms ease;
 
     &:hover {
-        border-color: #d2b17a;
-        background: #d2b17a;
-        color: #261a1d;
+        border-color: #e1c18c;
+        background: transparent;
+        color: #e1c18c;
     }
 
     &:focus-visible {
-        outline: 3px solid #8b2635;
+        outline: 2px solid currentColor;
         outline-offset: 4px;
     }
 }
 
-// Facilities section
 .facilities-list-section {
-    position: relative;
-    overflow: hidden;
-    padding: 100px 0;
-    background:
-        radial-gradient(ellipse at 0% 0%,
-            rgb(181 138 76 / 8%),
-            transparent 35%),
-        #fbf7f1;
+    padding: 90px 0 100px;
+    background: #f5f0e8;
 }
 
-// Decorative heading
 .facilities-heading {
-    max-width: 720px;
-    margin: 0 auto 58px;
-    text-align: center;
-
-    .eyebrow {
-        margin: 18px 0 16px;
-        color: #98713f;
-    }
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 42px;
 
     h2 {
-        margin-bottom: 20px;
+        margin: 0;
         color: #3b292e;
-        font-size: clamp(34px, 4.5vw, 50px);
+        font-size: clamp(30px, 4vw, 43px);
         font-weight: 500;
         line-height: 1.25;
 
         span {
-            display: block;
             color: #8b2635;
             font-style: italic;
         }
     }
-}
 
-.heading-decoration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    color: #b58a4c;
-    font-size: 21px;
-
-    span {
-        width: 42px;
-        height: 1px;
-        background: #b58a4c;
-    }
-}
-
-.heading-description {
-    max-width: 570px;
-    margin: 0 auto;
-    color: #74696b;
-    font-size: 15px;
-    line-height: 1.9;
-}
-
-// Premium facility cards
-.facility-card {
-    position: relative;
-    display: flex;
-    min-height: 285px;
-    height: 100%;
-    flex-direction: column;
-    padding: 28px 24px 24px;
-    overflow: hidden;
-    border: 1px solid #e9dfd2;
-    border-radius: 3px;
-    background: rgb(255 253 249 / 92%);
-    box-shadow: 0 8px 24px rgb(59 41 46 / 3%);
-    transition:
-        transform 220ms ease,
-        box-shadow 220ms ease,
-        border-color 220ms ease;
-
-    &:hover {
-        transform: translateY(-7px);
-        border-color: #c7a46f;
-        box-shadow: 0 18px 36px rgb(59 41 46 / 10%);
-
-        .facility-icon {
-            background: #8b2635;
-            color: #fffdf9;
-            transform: rotate(-5deg);
-        }
-
-        .facility-card-line {
-            width: 70px;
-        }
-    }
-
-    h3 {
-        margin: 27px 0 12px;
-        color: #3b292e;
-        font-size: 21px;
-        font-weight: 500;
-        line-height: 1.4;
-    }
-
-    p {
-        margin: 0 0 22px;
+    .heading-description {
+        max-width: 340px;
+        margin: 0 0 4px;
         color: #74696b;
         font-size: 13px;
         line-height: 1.9;
     }
 }
 
-.facility-card-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+.facility-card {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #e8dfd2;
+    background: #fffdf9;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 30px rgb(59 41 46 / 9%);
+    }
+}
+
+.facility-image,
+.facility-icon-area {
+    position: relative;
+    overflow: hidden;
+    background: #e9dfd2;
+}
+
+
+.facility-image {
+    height: 180px;
+    overflow: hidden;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 300ms ease;
+    }
+}
+
+
+.facility-card:hover .facility-image img {
+    transform: scale(1.04);
+}
+
+.facility-icon-area {
+    display: grid;
+    min-height: 150px;
+    place-items: center;
+
+    >i {
+        color: #8b2635;
+        font-size: 42px;
+    }
 }
 
 .facility-number {
-    color: #b58a4c;
-    font-family: var(--font-heading);
-    font-size: 19px;
-    font-style: italic;
-}
-
-.facility-icon {
+    position: absolute;
+    top: 13px;
+    left: 13px;
     display: grid;
-    width: 58px;
-    height: 58px;
-    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
     place-items: center;
-    border: 1px solid #e5d4bd;
-    border-radius: 50%;
-    background: #f7efe4;
+    background: #fffdf9;
     color: #8b2635;
-    font-size: 25px;
-    transition:
-        background 220ms ease,
-        color 220ms ease,
-        transform 220ms ease;
+    font-size: 11px;
+    font-weight: 700;
 }
 
-.facility-card-line {
-    width: 38px;
-    height: 2px;
-    margin-top: auto;
-    background: #b58a4c;
-    transition: width 220ms ease;
+.facility-content {
+    padding: 22px 20px 24px;
+
+    h3 {
+        margin-bottom: 10px;
+        color: #3b292e;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.35;
+    }
+
+    >p {
+        min-height: 52px;
+        margin-bottom: 17px;
+        color: #74696b;
+        font-size: 13px;
+        line-height: 1.8;
+    }
 }
 
-// Bottom decorative note
-.facilities-bottom-note {
-    display: flex;
+.facility-link {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 18px;
-    margin-top: 52px;
+    gap: 9px;
+    color: #8b2635;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    i {
+        transition: transform 180ms ease;
+    }
+
+    &:hover i {
+        transform: translate(3px, -3px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid #8b2635;
+        outline-offset: 4px;
+    }
+}
+
+.facilities-note {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    margin-top: 35px;
+    padding: 18px 20px;
+    border-left: 3px solid #b58a4c;
+    background: #fffdf9;
+
+    i {
+        margin-top: 2px;
+        color: #98713f;
+    }
 
     p {
         margin: 0;
         color: #74696b;
-        font-family: var(--font-heading);
-        font-size: 17px;
-        font-style: italic;
-        text-align: center;
-    }
-
-    .note-line {
-        width: 35px;
-        height: 1px;
-        flex-shrink: 0;
-        background: #c6a575;
-    }
-}
-
-// Contact CTA section
-.facilities-contact {
-    padding: 65px 0;
-    background: #f7f2eb;
-
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-    }
-
-    h2 {
-        margin-bottom: 12px;
-        color: #3b292e;
-        font-size: clamp(26px, 3vw, 36px);
-    }
-
-    .container>div>p:last-child {
-        margin: 0;
-        color: #74696b;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 1.8;
     }
+}
 
-    .eyebrow {
-        margin-bottom: 12px;
+.facilities-cta {
+    padding: 75px 0;
+    background: #fffdf9;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 15px;
+        color: #3b292e;
+        font-size: clamp(30px, 4vw, 42px);
+    }
+
+    >.container>p:not(.section-eyebrow) {
+        margin-bottom: 25px;
+        color: #74696b;
+        font-size: 14px;
     }
 }
 
-// Responsive styles
 @media (max-width: 767.98px) {
     .facilities-hero {
-        padding: 65px 0;
+        padding: 70px 0 75px;
     }
 
     .facilities-list-section {
@@ -288,52 +255,40 @@
     }
 
     .facilities-heading {
-        margin-bottom: 36px;
-
-        h2 {
-            font-size: 35px;
-        }
-    }
-
-    .heading-description {
-        font-size: 14px;
-    }
-
-    .facility-card {
-        min-height: 250px;
-        padding: 24px 22px;
-    }
-
-    .facilities-bottom-note {
-        gap: 10px;
-        margin-top: 35px;
-
-        p {
-            font-size: 15px;
-        }
-
-        .note-line {
-            width: 20px;
-        }
-    }
-
-    .facilities-contact .container {
-        align-items: flex-start;
+        align-items: start;
         flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .facility-content {
+        padding: 22px 20px;
+
+        >p {
+            min-height: 0;
+        }
+    }
+
+    .facilities-cta {
+        padding: 60px 0;
     }
 }
 
-// Accessibility: respect reduced-motion preference
 @media (prefers-reduced-motion: reduce) {
 
-    .facilities-cta,
     .facility-card,
-    .facility-icon,
-    .facility-card-line {
+    .facility-image img,
+    .facilities-hero-btn,
+    .facilities-cta-btn,
+    .facility-link i {
         transition: none;
     }
 
     .facility-card:hover {
+        transform: none;
+    }
+
+    .facility-card:hover .facility-image img {
         transform: none;
     }
 }

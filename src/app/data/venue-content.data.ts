@@ -1,3 +1,4 @@
+
 import { VenueFacility } from '../core/models/venue.model';
 
 export const VENUE_FACILITIES: VenueFacility[] = [
@@ -29,20 +30,24 @@ export const VENUE_FACILITIES: VenueFacility[] = [
         title: 'Ample Parking',
         description: 'Convenient parking arrangements for your guests.',
         icon: 'bi-car-front',
+        image: '/images/facilities/parking.jpg',
     },
     {
         title: 'Air-Conditioned Comfort',
         description: 'A comfortable indoor environment for your guests.',
         icon: 'bi-snow',
+        image: '/images/facilities/air-conditioned-hall.jpg',
     },
     {
         title: 'Guest Seating',
         description: 'Seating arrangements for family and friends.',
         icon: 'bi-people',
+        image: '/images/facilities/guest-seating.jpg',
     },
     {
         title: 'Event Assistance',
         description: 'Support to help coordinate your event at the venue.',
         icon: 'bi-calendar-check',
+        image: '/images/facilities/event-assistance.jpg',
     },
 ];
