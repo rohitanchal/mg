@@ -1,1 +1,116 @@
-<p>gallery works!</p>
+<section class="gallery-hero">
+    <div class="container">
+        <p class="section-eyebrow">MOMENTS WORTH REMEMBERING</p>
+
+        <h1>
+            A Gallery of <span>Beautiful Moments</span>
+        </h1>
+
+        <p>
+            Explore wedding inspiration, elegant decorations and
+            celebration spaces for your special occasions.
+        </p>
+
+        <a routerLink="/contact" class="btn gallery-hero-btn">
+            Plan Your Celebration
+            <i class="bi bi-arrow-up-right ms-2" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+
+<section class="gallery-section">
+    <div class="container">
+
+        <div class="gallery-heading">
+            <div>
+                <p class="section-eyebrow">A LITTLE INSPIRATION</p>
+                <h2>Explore the <span>Gallery</span></h2>
+            </div>
+
+            <p>
+                From beautiful settings to memorable celebrations,
+                find inspiration for your next event.
+            </p>
+        </div>
+
+        <!-- Category filters -->
+        <div class="gallery-filters" aria-label="Filter gallery images">
+            @for (category of categories; track category) {
+            <button type="button" class="gallery-filter" [class.active]="activeCategory === category"
+                [attr.aria-pressed]="activeCategory === category" (click)="selectCategory(category)">
+                {{ category }}
+            </button>
+            }
+        </div>
+
+        <!-- Gallery grid -->
+        <div class="gallery-grid">
+            @for (image of filteredImages; track image.src) {
+            <button type="button" class="gallery-item" [class.gallery-item--featured]="
+              image.featured && activeCategory === 'All'
+            " [attr.aria-label]="'View image: ' + image.title" (click)="openImage(image)">
+                <img [src]="image.src" [alt]="image.alt" loading="lazy" decoding="async" width="900" height="650" />
+
+                <span class="gallery-overlay">
+                    <span class="gallery-caption">
+                        <span class="gallery-category">
+                            {{ image.category }}
+                        </span>
+                        <span class="gallery-title">
+                            {{ image.title }}
+                        </span>
+                    </span>
+
+                    <span class="gallery-zoom" aria-hidden="true">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </span>
+                </span>
+            </button>
+            }
+        </div>
+
+        <p class="gallery-demo-note">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            Sample images are for design demonstration. Actual venue
+            photographs should replace these before launch.
+        </p>
+
+    </div>
+</section>
+
+<section class="gallery-cta">
+    <div class="container">
+        <p class="section-eyebrow">YOUR MOMENT, YOUR WAY</p>
+
+        <h2>Let's Create Something <span>Memorable</span></h2>
+
+        <p>
+            Have a date in mind? Get in touch to discuss your
+            celebration and venue requirements.
+        </p>
+
+        <a routerLink="/contact" class="btn gallery-cta-btn">
+            Enquire About Your Event
+            <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Image lightbox -->
+@if (selectedImage; as image) {
+<div class="gallery-lightbox" role="dialog" aria-modal="true" [attr.aria-label]="image.title" (click)="closeImage()"
+    (keydown.escape)="closeImage()">
+    <button type="button" class="lightbox-close" aria-label="Close image preview" (click)="closeImage()">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+    </button>
+
+    <figure class="lightbox-content" (click)="$event.stopPropagation()">
+        <img [src]="image.src" [alt]="image.alt" />
+
+        <figcaption>
+            <span>{{ image.category }}</span>
+            <h2>{{ image.title }}</h2>
+        </figcaption>
+    </figure>
+</div>
+}
