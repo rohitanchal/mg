@@ -35,10 +35,22 @@
 }
 
 .footer-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 20px;
     color: #e0c18c;
     font-family: Georgia, serif;
     font-size: 19px;
+
+    &::before,
+    &::after {
+        width: 28px;
+        height: 1px;
+        flex: 0 0 28px;
+        background: currentColor;
+        content: '';
+    }
 }
 
 .footer-links {

@@ -3,13 +3,33 @@
 }
 
 .facilities-hero {
+    position: relative;
+    overflow: hidden;
     padding: 90px 0 100px;
     background: #3b292e;
     color: #fffdf9;
     text-align: center;
 
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
     .section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
         color: #e1c18c;
+
+        &::before,
+        &::after {
+            width: 42px;
+            height: 1px;
+            flex: 0 0 42px;
+            background: currentColor;
+            content: '';
+        }
     }
 
     h1 {
@@ -29,6 +49,47 @@
         color: #e4dadd;
         font-size: 15px;
         line-height: 1.9;
+    }
+}
+
+.facilities-hero-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.line-ring {
+    position: absolute;
+    border: 1px solid rgb(225 193 140 / 34%);
+    border-radius: 50%;
+
+    &::after {
+        position: absolute;
+        border: 1px solid rgb(225 193 140 / 20%);
+        border-radius: 50%;
+        content: '';
+    }
+}
+
+.line-ring--left {
+    top: -150px;
+    left: -130px;
+    width: 300px;
+    height: 300px;
+
+    &::after {
+        inset: 28px;
+    }
+}
+
+.line-ring--right {
+    right: -120px;
+    bottom: -170px;
+    width: 380px;
+    height: 380px;
+
+    &::after {
+        inset: 36px;
     }
 }
 
@@ -229,9 +290,32 @@
 }
 
 .facilities-cta {
+    position: relative;
+    overflow: hidden;
     padding: 75px 0;
     background: #fffdf9;
     text-align: center;
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+
+        &::before,
+        &::after {
+            width: 42px;
+            height: 1px;
+            flex: 0 0 42px;
+            background: #8b2635;
+            content: '';
+        }
+    }
 
     h2 {
         margin-bottom: 15px;
@@ -249,6 +333,26 @@
 @media (max-width: 767.98px) {
     .facilities-hero {
         padding: 70px 0 75px;
+
+        .section-eyebrow {
+            gap: 10px;
+
+            &::before,
+            &::after {
+                width: 22px;
+                flex-basis: 22px;
+            }
+        }
+    }
+
+    .line-ring--left {
+        top: -170px;
+        left: -170px;
+    }
+
+    .line-ring--right {
+        right: -180px;
+        bottom: -210px;
     }
 
     .facilities-list-section {
@@ -272,6 +376,16 @@
 
     .facilities-cta {
         padding: 60px 0;
+
+        .section-eyebrow {
+            gap: 10px;
+
+            &::before,
+            &::after {
+                width: 22px;
+                flex-basis: 22px;
+            }
+        }
     }
 }
 

@@ -10,29 +10,29 @@
     color: #fffdf9;
     text-align: center;
 
-    &::after {
-        position: absolute;
-        right: -100px;
-        bottom: -180px;
-        width: 360px;
-        height: 360px;
-        border: 1px solid rgb(225 193 140 / 25%);
-        border-radius: 50%;
-        content: '';
-        pointer-events: none;
-    }
-
     .container {
         position: relative;
         z-index: 1;
     }
 
     .about-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
         margin-bottom: 22px;
         color: #e1c18c;
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 3px;
+
+        &::before,
+        &::after {
+            width: 42px;
+            height: 1px;
+            background: currentColor;
+            content: '';
+        }
     }
 
     h1 {
@@ -53,6 +53,50 @@
         color: #e4dadd;
         font-size: 15px;
         line-height: 1.9;
+    }
+}
+
+.about-hero-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.line-ring {
+    position: absolute;
+    border: 1px solid rgb(225 193 140 / 34%);
+}
+
+.line-ring {
+    border-radius: 50%;
+
+    &::after {
+        position: absolute;
+        border: 1px solid rgb(225 193 140 / 20%);
+        border-radius: 50%;
+        content: '';
+    }
+}
+
+.line-ring--left {
+    top: -150px;
+    left: -130px;
+    width: 300px;
+    height: 300px;
+
+    &::after {
+        inset: 28px;
+    }
+}
+
+.line-ring--right {
+    right: -120px;
+    bottom: -170px;
+    width: 380px;
+    height: 380px;
+
+    &::after {
+        inset: 36px;
     }
 }
 
@@ -231,20 +275,64 @@
 }
 
 .about-cta {
+    position: relative;
+    overflow: hidden;
     margin-top: 75px;
-    padding: 50px 20px;
+    padding: 58px 48px;
     background: #3b292e;
     color: #fffdf9;
 
+    h2,
+    p,
+    a {
+        position: relative;
+        z-index: 1;
+    }
+
     h2 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 12px 14px;
         margin-bottom: 12px;
         font-size: clamp(28px, 4vw, 38px);
+
+        &::before,
+        &::after {
+            width: 36px;
+            height: 1px;
+            background: #e1c18c;
+            content: '';
+        }
     }
 
     p {
         margin-bottom: 24px;
         color: #e4dadd;
         font-size: 14px;
+    }
+
+    .line-ring--left {
+        top: -96px;
+        left: -84px;
+        width: 190px;
+        height: 190px;
+
+        &::after {
+            inset: 18px;
+        }
+    }
+
+    .line-ring--right {
+        right: -78px;
+        bottom: -110px;
+        width: 210px;
+        height: 210px;
+
+        &::after {
+            inset: 22px;
+        }
     }
 }
 
@@ -253,8 +341,24 @@
         padding: 75px 0 80px;
 
         .about-eyebrow {
+            gap: 10px;
             letter-spacing: 2px;
+
+            &::before,
+            &::after {
+                width: 22px;
+            }
         }
+    }
+
+    .line-ring--left {
+        top: -170px;
+        left: -170px;
+    }
+
+    .line-ring--right {
+        right: -180px;
+        bottom: -210px;
     }
 
     .about-story {
@@ -275,7 +379,12 @@
 
     .about-cta {
         margin-top: 45px;
-        padding: 38px 18px;
+        padding: 46px 28px;
+
+        h2::before,
+        h2::after {
+            width: 18px;
+        }
     }
 }
 

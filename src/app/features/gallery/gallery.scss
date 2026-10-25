@@ -3,6 +3,8 @@
 }
 
 .gallery-hero {
+    position: relative;
+    overflow: hidden;
     padding: 90px 0 85px;
     background:
         radial-gradient(circle at 85% 15%,
@@ -11,8 +13,28 @@
         #f5eee5;
     text-align: center;
 
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
     .section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
         margin-bottom: 18px;
+        color: #2f2024;
+        letter-spacing: 3px;
+
+        &::before,
+        &::after {
+            width: 42px;
+            height: 1px;
+            flex: 0 0 42px;
+            background: currentColor;
+            content: '';
+        }
     }
 
     h1 {
@@ -33,6 +55,47 @@
         color: var(--color-muted);
         font-size: 1.02rem;
         line-height: 1.8;
+    }
+}
+
+.gallery-hero-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.gallery-hero .line-ring {
+    position: absolute;
+    border: 1px solid rgb(47 32 36 / 34%);
+    border-radius: 50%;
+
+    &::after {
+        position: absolute;
+        border: 1px solid rgb(47 32 36 / 20%);
+        border-radius: 50%;
+        content: '';
+    }
+}
+
+.gallery-hero .line-ring--left {
+    top: -150px;
+    left: -130px;
+    width: 300px;
+    height: 300px;
+
+    &::after {
+        inset: 28px;
+    }
+}
+
+.gallery-hero .line-ring--right {
+    right: -120px;
+    bottom: -170px;
+    width: 380px;
+    height: 380px;
+
+    &::after {
+        inset: 36px;
     }
 }
 
@@ -242,6 +305,22 @@
     background: #f1e6d5;
     text-align: center;
 
+    .section-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+
+        &::before,
+        &::after {
+            width: 42px;
+            height: 1px;
+            flex: 0 0 42px;
+            background: #2f2024;
+            content: '';
+        }
+    }
+
     h2 {
         margin: 0;
         color: var(--color-primary-dark);
@@ -357,6 +436,41 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 14px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .gallery-hero {
+        .section-eyebrow {
+            gap: 10px;
+            letter-spacing: 2px;
+
+            &::before,
+            &::after {
+                width: 22px;
+                flex-basis: 22px;
+            }
+        }
+
+        .line-ring--left {
+            top: -170px;
+            left: -170px;
+        }
+
+        .line-ring--right {
+            right: -180px;
+            bottom: -210px;
+        }
+    }
+
+    .gallery-cta .section-eyebrow {
+        gap: 10px;
+
+        &::before,
+        &::after {
+            width: 22px;
+            flex-basis: 22px;
+        }
     }
 }
 
