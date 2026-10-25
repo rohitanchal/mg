@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class WhatsappButton {
   // Replace with the venue's real WhatsApp number when provided.
-  private readonly phoneNumber = '9999999999';
+  private readonly phoneNumber = '9794923766';
 
   get whatsappUrl(): string {
     if (!this.phoneNumber) {
