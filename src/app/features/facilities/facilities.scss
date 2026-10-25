@@ -1,0 +1,339 @@
+:host {
+    display: block;
+}
+
+// Hero section
+.facilities-hero {
+    padding: 90px 0;
+    background: #3b292e;
+    color: #fffdf9;
+    text-align: center;
+
+    .eyebrow {
+        color: #e1c18c;
+    }
+
+    h1 {
+        max-width: 850px;
+        margin: 0 auto 22px;
+        font-size: clamp(38px, 5vw, 62px);
+        font-weight: 500;
+        line-height: 1.2;
+
+        span {
+            color: #e1c18c;
+            font-style: italic;
+        }
+    }
+
+    .container>p:not(.eyebrow) {
+        max-width: 650px;
+        margin: 0 auto 28px;
+        color: rgb(255 255 255 / 78%);
+        font-size: 15px;
+        line-height: 1.9;
+    }
+}
+
+// Shared eyebrow style
+.eyebrow {
+    margin-bottom: 16px;
+    color: #9b7748;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+// CTA button
+.facilities-cta {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border: 1px solid #b58a4c;
+    border-radius: 2px;
+    background: #b58a4c;
+    color: #261a1d;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 180ms ease, border-color 180ms ease;
+
+    &:hover {
+        border-color: #d2b17a;
+        background: #d2b17a;
+        color: #261a1d;
+    }
+
+    &:focus-visible {
+        outline: 3px solid #8b2635;
+        outline-offset: 4px;
+    }
+}
+
+// Facilities section
+.facilities-list-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background:
+        radial-gradient(ellipse at 0% 0%,
+            rgb(181 138 76 / 8%),
+            transparent 35%),
+        #fbf7f1;
+}
+
+// Decorative heading
+.facilities-heading {
+    max-width: 720px;
+    margin: 0 auto 58px;
+    text-align: center;
+
+    .eyebrow {
+        margin: 18px 0 16px;
+        color: #98713f;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #3b292e;
+        font-size: clamp(34px, 4.5vw, 50px);
+        font-weight: 500;
+        line-height: 1.25;
+
+        span {
+            display: block;
+            color: #8b2635;
+            font-style: italic;
+        }
+    }
+}
+
+.heading-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #b58a4c;
+    font-size: 21px;
+
+    span {
+        width: 42px;
+        height: 1px;
+        background: #b58a4c;
+    }
+}
+
+.heading-description {
+    max-width: 570px;
+    margin: 0 auto;
+    color: #74696b;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+// Premium facility cards
+.facility-card {
+    position: relative;
+    display: flex;
+    min-height: 285px;
+    height: 100%;
+    flex-direction: column;
+    padding: 28px 24px 24px;
+    overflow: hidden;
+    border: 1px solid #e9dfd2;
+    border-radius: 3px;
+    background: rgb(255 253 249 / 92%);
+    box-shadow: 0 8px 24px rgb(59 41 46 / 3%);
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease;
+
+    &:hover {
+        transform: translateY(-7px);
+        border-color: #c7a46f;
+        box-shadow: 0 18px 36px rgb(59 41 46 / 10%);
+
+        .facility-icon {
+            background: #8b2635;
+            color: #fffdf9;
+            transform: rotate(-5deg);
+        }
+
+        .facility-card-line {
+            width: 70px;
+        }
+    }
+
+    h3 {
+        margin: 27px 0 12px;
+        color: #3b292e;
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    p {
+        margin: 0 0 22px;
+        color: #74696b;
+        font-size: 13px;
+        line-height: 1.9;
+    }
+}
+
+.facility-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.facility-number {
+    color: #b58a4c;
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-style: italic;
+}
+
+.facility-icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid #e5d4bd;
+    border-radius: 50%;
+    background: #f7efe4;
+    color: #8b2635;
+    font-size: 25px;
+    transition:
+        background 220ms ease,
+        color 220ms ease,
+        transform 220ms ease;
+}
+
+.facility-card-line {
+    width: 38px;
+    height: 2px;
+    margin-top: auto;
+    background: #b58a4c;
+    transition: width 220ms ease;
+}
+
+// Bottom decorative note
+.facilities-bottom-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 52px;
+
+    p {
+        margin: 0;
+        color: #74696b;
+        font-family: var(--font-heading);
+        font-size: 17px;
+        font-style: italic;
+        text-align: center;
+    }
+
+    .note-line {
+        width: 35px;
+        height: 1px;
+        flex-shrink: 0;
+        background: #c6a575;
+    }
+}
+
+// Contact CTA section
+.facilities-contact {
+    padding: 65px 0;
+    background: #f7f2eb;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    h2 {
+        margin-bottom: 12px;
+        color: #3b292e;
+        font-size: clamp(26px, 3vw, 36px);
+    }
+
+    .container>div>p:last-child {
+        margin: 0;
+        color: #74696b;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .eyebrow {
+        margin-bottom: 12px;
+    }
+}
+
+// Responsive styles
+@media (max-width: 767.98px) {
+    .facilities-hero {
+        padding: 65px 0;
+    }
+
+    .facilities-list-section {
+        padding: 65px 0;
+    }
+
+    .facilities-heading {
+        margin-bottom: 36px;
+
+        h2 {
+            font-size: 35px;
+        }
+    }
+
+    .heading-description {
+        font-size: 14px;
+    }
+
+    .facility-card {
+        min-height: 250px;
+        padding: 24px 22px;
+    }
+
+    .facilities-bottom-note {
+        gap: 10px;
+        margin-top: 35px;
+
+        p {
+            font-size: 15px;
+        }
+
+        .note-line {
+            width: 20px;
+        }
+    }
+
+    .facilities-contact .container {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+// Accessibility: respect reduced-motion preference
+@media (prefers-reduced-motion: reduce) {
+
+    .facilities-cta,
+    .facility-card,
+    .facility-icon,
+    .facility-card-line {
+        transition: none;
+    }
+
+    .facility-card:hover {
+        transform: none;
+    }
+}

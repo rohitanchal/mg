@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { VENUE_FACILITIES } from '../../data/venue-content.data';
 
 @Component({
-  imports: [],
   selector: 'app-facilities',
-  styleUrl: './facilities.scss',
+  imports: [RouterLink],
   templateUrl: './facilities.html',
+  styleUrl: './facilities.scss',
 })
-export class Facilities {}
+export class Facilities {
+  readonly facilities = VENUE_FACILITIES;
+}

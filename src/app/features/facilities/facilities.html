@@ -1,1 +1,84 @@
-<p>facilities works!</p>
+<section class="facilities-hero">
+    <div class="container">
+        <p class="eyebrow">THOUGHTFULLY DESIGNED FOR YOU</p>
+        <h1>Facilities for <span>Every Celebration</span></h1>
+        <p>
+            Discover the spaces and services designed to make your special
+            occasions comfortable, beautiful and memorable.
+        </p>
+        <a routerLink="/contact" class="btn facilities-cta">
+            Plan Your Event
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+
+
+<section class="facilities-list-section">
+    <div class="container">
+        <div class="facilities-heading">
+            <div class="heading-decoration">
+                <span></span>
+                <i class="bi bi-stars" aria-hidden="true"></i>
+                <span></span>
+            </div>
+
+            <p class="eyebrow">THE DETAILS THAT MATTER</p>
+
+            <h2>
+                Thoughtfully Curated
+                <span>For Your Special Day</span>
+            </h2>
+
+            <p class="heading-description">
+                From the setting to the little details, explore the facilities
+                designed to bring your celebration together.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            @for (facility of facilities; track facility.title; let i = $index) {
+            <div class="col-12 col-sm-6 col-lg-3">
+                <article class="facility-card">
+                    <div class="facility-card-top">
+                        <span class="facility-number">
+                            {{ (i + 1).toString().padStart(2, '0') }}
+                        </span>
+
+                        <div class="facility-icon">
+                            <i [class]="'bi ' + facility.icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <h3>{{ facility.title }}</h3>
+
+                    <p>{{ facility.description }}</p>
+
+                    <div class="facility-card-line"></div>
+                </article>
+            </div>
+            }
+        </div>
+
+        <div class="facilities-bottom-note">
+            <span class="note-line"></span>
+            <p>Every celebration deserves a beautiful setting.</p>
+            <span class="note-line"></span>
+        </div>
+    </div>
+</section>
+
+
+<section class="facilities-contact">
+    <div class="container">
+        <div>
+            <p class="eyebrow">LET'S PLAN SOMETHING SPECIAL</p>
+            <h2>Have Questions About Our Facilities?</h2>
+            <p>Contact us to discuss your event requirements and venue arrangements.</p>
+        </div>
+        <a routerLink="/contact" class="btn facilities-cta">
+            Enquire Now
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>

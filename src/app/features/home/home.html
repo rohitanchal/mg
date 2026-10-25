@@ -1,1 +1,148 @@
-<p>home works!</p>
+<section class="hero">
+    <img class="hero-image" src="/images/hero/hero2.jpg" alt="Banquet hall interior" fetchpriority="high" />
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+        <p class="hero-eyebrow">
+            A BEAUTIFUL SETTING FOR YOUR SPECIAL DAY
+        </p>
+
+        <h1>
+            Where Your <span>Forever</span><br />
+            Begins
+        </h1>
+
+        <p class="hero-description">
+            Celebrate life's most precious moments in a setting
+            designed for unforgettable memories.
+        </p>
+
+        <div class="hero-actions">
+            <a routerLink="/contact" class="btn hero-primary">
+                Enquire About Your Event
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+
+            <a routerLink="/gallery" class="btn hero-secondary">
+                Explore Gallery
+            </a>
+        </div>
+
+        <div class="hero-note">
+            <span class="note-line"></span>
+            <span>A special place for life's special moments</span>
+        </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+        <span></span>
+        <small>SCROLL TO EXPLORE</small>
+    </div>
+</section>
+
+<section class="intro-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-12 col-lg-6">
+                <div class="intro-image-wrapper">
+                    <img src="/images/hero/hero.jpg" alt="Banquet hall interior" loading="lazy" decoding="async"
+                        width="900" height="700" />
+
+                    <div class="intro-image-caption">
+                        <i class="bi bi-stars" aria-hidden="true"></i>
+                        <span>A space for meaningful celebrations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="intro-content">
+                    <p class="section-eyebrow">YOUR CELEBRATION, OUR SPACE</p>
+
+                    <h2>
+                        A Setting Made for Your
+                        <span>Most Meaningful Moments</span>
+                    </h2>
+
+                    <p class="intro-description">
+                        From wedding celebrations to family gatherings, discover
+                        a venue where memorable occasions come together.
+                    </p>
+
+                    <a routerLink="/about" class="intro-link">
+                        Discover Our Venue
+                        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="intro-divider"></div>
+
+                    <p class="intro-note">
+                        Every special occasion deserves a setting of its own.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+
+<section class="featured-facilities-section">
+    <div class="container">
+        <div class="featured-heading">
+            <div class="heading-decoration" aria-hidden="true">
+                <span></span>
+                <i class="bi bi-stars"></i>
+                <span></span>
+            </div>
+
+            <p class="section-eyebrow">THE VENUE EXPERIENCE</p>
+
+            <h2>
+                Thoughtfully Designed
+                <span>For Your Celebrations</span>
+            </h2>
+
+            <p class="featured-description">
+                Explore the spaces and details that can make your special
+                occasion memorable.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            @for (facility of featuredFacilities; track facility.title) {
+            <div class="col-12 col-sm-6 col-lg-3">
+                <article class="featured-facility-card">
+                    <div class="featured-image-wrapper">
+                        <img [src]="facility.image" [alt]="facility.title" loading="lazy" decoding="async" width="600"
+                            height="450" />
+
+                        <span class="featured-image-icon" aria-hidden="true">
+                            <i [class]="'bi ' + facility.icon"></i>
+                        </span>
+                    </div>
+
+                    <div class="featured-card-content">
+                        <h3>{{ facility.title }}</h3>
+
+                        <p>{{ facility.description }}</p>
+
+                        <a routerLink="/facilities" class="featured-card-link"
+                            [attr.aria-label]="'Explore ' + facility.title + ' facilities'">
+                            Discover More
+                            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            }
+        </div>
+
+        <div class="featured-footer">
+            <a routerLink="/facilities" class="featured-all-link">
+                Explore All Facilities
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</section>
